@@ -1,0 +1,29 @@
+﻿@model Zadania
+
+    <ul class="list-group">
+        @foreach(Zadania zadanie in ViewBag.Zadania)
+                {
+                   <li class="list-group-item" style="height:90px;width:100%">
+                       <div style="float:left">
+                           <H4>@zadanie.Tytul</H4>
+                           <p>@zadanie.Opis</p>
+                       </div>
+                       <div style="float:right" class="pt-2">
+                           <form style="float:right" class="ml-4" method="post" asp-action="UsunZadanie" asp-controller="List">
+                               <input type="hidden" value="@zadanie.IdZadania" asp-for="IdZadania"/>
+                               <button class="btn btn-danger">X</button>
+                           </form>
+                           <form style="float:right" class="ml-4" method="post" asp-action="EdytujZadanie" asp-controller="List">
+                               <input type="hidden" value="@zadanie.IdZadania" asp-for="IdZadania"/>
+                               <button class="btn btn-primary">/</button>
+                           </form>
+                           <form style="float:right" class="ml-4" method="post" asp-action="AkceptujZadanie" asp-controller="List">
+                               <input type="hidden" value="@zadanie.IdZadania" asp-for="IdZadania"/>
+                               <button class="btn btn-success">\/</button>
+                           </form>
+                       </div>
+                   </li> 
+                }
+
+
+    </ul>

@@ -1,0 +1,19 @@
+﻿@model Zadania
+
+<ul class="list-group">
+    @foreach (Zadania zadanie in ViewBag.Zadania)
+    {
+        <li class="list-group-item" style="height:90px;width:100%">
+            <div style="float:left">
+                <H4>@zadanie.Tytul</H4>
+                <p>@zadanie.Opis</p>
+            </div>
+            <div style="float:right" class="pt-3">
+                <h3 class="text-secondary">Zakończone</h3>
+            </div>
+        </li>
+
+    }
+
+
+</ul>

@@ -1,0 +1,13 @@
+﻿@model Zadania 
+<form method="post" asp-action="EdytujZadanie" asp-controller="List">
+    <div class="form-group">
+        <label for="Tytul">Tytuł Zadania</label>
+        <input class="form-control" type="text" value="@ViewBag.Zadanie.Tytul" asp-for="Tytul" />
+    </div>
+    <div class="form-group">
+        <label for="Opis">Opis Zadania</label>
+        <input class="form-control" type="text" value="@ViewBag.Zadanie.Opis" asp-for="Opis" />
+    </div>
+    <input type="hidden" asp-for="IdZadania" value="@ViewBag.Zadanie.IdZadania" />
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
